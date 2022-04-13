@@ -20,64 +20,27 @@ public class CustomerController extends Spring.Controller<Customer> {
     }
 
     @PostMapping
-    @Override
     public void add(@Valid @NotNull @RequestBody Customer customer) {
         super.add(customer);
     }
 
     @GetMapping
-    @Override
     public List<Customer> getAll() {
         return super.getAll();
     }
 
     @GetMapping(path = "{id}")
-    @Override
     public Customer get(@PathVariable("id") UUID id) {
         return super.get(id);
     }
 
     @DeleteMapping(path = "{id}")
-    @Override
     public void delete(@PathVariable("id") UUID id) {
         super.delete(id);
     }
 
     @PutMapping(path = "{id}")
-    @Override
     public void update(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Customer customer) {
         super.update(id, customer);
     }
-
-    /*private final CustomerService service;
-
-    @Autowired
-    public CustomerController(CustomerService service) {
-        this.service = service;
-    }
-
-    @PostMapping
-    public int addCustomer(@Valid @NotNull @RequestBody Customer customer) {
-        return service.addCustomer(customer);
-    }
-
-    @GetMapping
-    public List<Customer> getAllCustomer() {
-        return service.getAllCustomer();
-    }
-
-    @GetMapping(path = "{id}")
-    public Optional<Customer> getCustomer(@PathVariable("id") UUID id) {
-        return service.getCustomer(id);
-    }
-
-    @DeleteMapping(path = "{id}")
-    public int deleteCustomer(@PathVariable("id") UUID id) {
-        return service.deleteCustomer(id);
-    }
-
-    @PutMapping(path = "{id}")
-    public int updateCustomer(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Customer customer) {
-        return service.updateCustomer(id, customer);
-    }*/
 }
